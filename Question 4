@@ -1,0 +1,45 @@
+package fikraspace4;
+//function to merge two lists of elements alternatingly taking elements
+import java.util.Scanner;
+
+public class FikraSpace4 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int x,y;
+        System.out.println("Enter first array size.");
+        x=input.nextInt();
+        System.out.println("Enter second array size.");
+        y=input.nextInt();
+        //here I gave the user the freedom to specify the desired size of each array.
+        int []A = new int[x];
+        int []B = new int[y];
+        System.out.println("Enter First array elements.");
+        for(int i=0;i<x;i++)
+            A[i]=input.nextInt();
+        System.out.println("Enter second array elements.");
+        for(int j=0;j<y;j++)
+            B[j]=input.nextInt();
+        //as you can see the user inputs the desired elements to each array.
+        int g=y+x;
+        //the combined array will have the size of both arrays added up.
+        int []C = new int[g];
+        int k=0, i=0, j=0;
+        //initilized the variables to start the merging process.
+        int max=Math.max(x,y);
+        for(int l=0;l<max;l++){
+            if(i<x)
+                C[k++]=A[i++];
+            if(j<y)
+                C[k++]=B[j++];
+        }
+        /*the previous lines I used if statments and a for loop to solve the problem
+        that occurs when the user specifies different sizes to each array
+        */
+        //here I merge the two arrays.
+        System.out.print("The combined array is \t");
+        for(k=0;k<g;k++)
+            System.out.printf("%2d", C[k]);
+    //and finally the merged array is displayed
+    //PS:I tried to outdo myself and give the user the freedom to specify the array type but I failed so..sorry :)
+    }
+}
