@@ -33,7 +33,7 @@ public class FikraSpace4 {
                 C[k++]=B[j++];
         }
         /*the previous lines I used if statments and a for loop to solve the problem
-        that occurs when the user specifies different sizes to each array
+        *that occurs when the user specifies different sizes to each array
         */
         //here I merge the two arrays.
         System.out.print("The combined array is \t");
