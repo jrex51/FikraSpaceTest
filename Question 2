@@ -1,0 +1,176 @@
+package fikraspace2;
+//function to convert numbers into written form
+class Convert {
+    public String numberToTxt(int n){
+        //I start by making a function listing all the possible numbers
+        String txt = "";
+        while(n!=0){
+            //from here on out each number inputed is given a written form as long its not equal to zero
+            //so using if statements the function cycles through every number inputed from 1 to 19
+            //also (n=0) makes sure the loop stops when the condition is met
+            if (n==1){
+                txt+="one\t";
+                n=0;}
+                        
+            else if (n==2){
+                txt+="two\t";
+                n=0;}
+                
+            else if (n==3){
+                txt+="three\t";
+                n=0;}
+            
+            else if (n==4){
+                txt+="four\t";
+                n=0;}
+            
+            else if (n==5){
+                txt+="five\t";
+                n=0;}
+            
+            else if (n==6){
+                txt+="six\t";
+                n=0;}
+            
+            else if (n==7){
+                txt+="seven\t";
+                n=0;}
+            
+            else if (n==8){
+                txt+="eight\t";
+                n=0;}
+            
+            else if (n==9){
+                txt+="nine\t";
+                n=0;}
+            
+            else if (n==10){
+                txt+="ten\t";
+                n=0;}
+            
+            else if (n==11){
+                txt+="eleven\t";
+                n=0;}
+            
+            else if (n==12){
+                txt+="twelve\t";
+                n=0;}
+            
+            else if (n==13){
+                txt+="thirteen\t";
+                n=0;}
+            
+            else if (n==14){
+                txt+="fourteen\t";
+                n=0;}
+            
+            else if (n==15){
+                txt+="fifteen\t";
+                n=0;}
+            
+            else if (n==16){
+                txt+="sixteen\t";
+                n=0;}
+            
+            else if (n==17){
+                txt+="seventeen\t";
+                n=0;}
+            
+            else if (n==18){
+                txt+="eighteen\t";
+                n=0;}
+            
+            else if (n==19){
+                txt+="nineteen\t";
+                n=0;}
+            /*here when the number inputed is between 20 and 100 I change the condition so that
+            *the number is recognized correctly
+            *also the (n-=20) makes sure that the function doesnt stop if the number is 25 
+            *so the function subtracts the 20 and converts the remaining 5
+            */
+            else if (n>=20&&n<30){
+                txt+="twenty\t";
+                n-=20;}
+            
+            else if (n>=30&&n<40){
+                txt+="thirty\t";
+                n-=30;}
+            
+            else if (n>=40&&n<50){
+                txt+="forty\t";
+                n-=40;}
+            
+            else if (n>=50&&n<60){
+                txt+="fifty\t";
+                n-=50;}
+            
+            else if (n>=60&&n<70){
+                txt+="sixty\t";
+                n-=60;}
+            
+            else if (n>=70&&n<80){
+                txt+="seventy\t";
+                n-=70;}
+            
+            else if (n>=80&&n<90){
+                txt+="eighty\t";
+                n-=80;}
+            
+            else if (n>=90&&n<100){
+                txt+="ninety\t";
+                n-=90;}
+        }
+            
+    return txt;
+    }
+        
+    public String convert(int n){
+        String txt = "";
+        //here we enter the converting process
+        while(n!=0){
+            if(n>=1 && n<100)
+            {
+                txt = txt + numberToTxt(n);
+                n=0;
+            }
+            //the lines above converts every number between 0 and 100
+            else if(n>=100 && n<1000){
+                txt = txt + numberToTxt(n/100);
+                txt = txt + "hundred\t";
+                n = n % 100;
+            /*here the numbers from 100 to 999 are converted by taking the integer
+            *in (n/100) converting it and addin a hundred then in (n%100) takes the remainder and
+            *converts it e.g. " 150 = 1.50 so its one hundred then 150%100=50 so its fifty thus
+            *one hundred fifty
+            */        
+                }
+            else if(n>=1000 && n<10000){
+                txt = txt + numberToTxt(n/1000);
+                txt = txt + "thousand\t";
+                n = n % 1000;
+            }
+           //here the same operation is done as the afore mentioned 
+        }
+    return (txt);
+        }
+}
+///////////////////////////////////////////////////////////////////////////////////////////////
+import java.util.*;
+
+public class FikraSpace2 {
+        
+    public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+    String txt;
+    int num;
+    Convert number = new Convert();
+    System.out.println("Enter any number.");
+    num = input.nextInt();
+    txt = number.convert(num);
+    System.out.println(txt);
+    }
+    /*here I just simply call the function and the converting process takes place
+    *and the output is displayed
+    *PS:I wanted to make it so to convert larger numbers like million but thats just extra work
+    */
+}
