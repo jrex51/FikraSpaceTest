@@ -1,0 +1,49 @@
+package fikraspace3;
+/*so as you can quickly tell that this is no working function and don't get me wrong I'm not making any
+*excuses so I'm just gonna clarify something
+*I fully understood the question and its requirements but I failed to implement them due to my lack of
+*expeirience with writing code
+*so I will explain how would I solve these problems IF I knew how to code them (hopefully you'd accept me and teach me :) )
+*first to know who has the most oscars we have to compare the names to each other and figure out whose name came up the most
+*thus printing his name
+*second for knowing who's the oldest we just compare the age of every actor and actress and find the biggest age then pull
+*the corresponding name and movie of that actor\actress
+*the third problem requires comparing years and names, if a name is the same for consecutive years
+* and is consecutive the most then we pull that name 
+*if ONLY I knew how to convert these text inormation into data that I can use then all of this could easily be done with
+*simple statements
+*I sat down for hours trying everything I know (putting them in an array, in a list, in an arraylist but I couldnt make it work
+*/
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class FikraSpace3 
+    {
+    public static void main(String[] args) 
+        {
+        String fileName;
+        fileName = "C:\\Users\\rexja\\OneDrive\\Documents\\NetBeansProjects\\FikraSpace3\\src\\fikraspace3\\oscar.csv";
+        File dataFile = new File(fileName);
+        try 
+            {
+            try (Scanner input = new Scanner(dataFile)) {
+                while(input.hasNext())
+                {
+                    String data= input.nextLine();
+                    System.out.println(data);
+                }
+            }
+            
+            } 
+        catch (FileNotFoundException ex) 
+            {
+            Logger.getLogger(FikraSpace3.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        
+        }
+            
+    
+    }
